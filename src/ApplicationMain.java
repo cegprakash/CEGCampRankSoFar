@@ -38,6 +38,17 @@ public class ApplicationMain {
 		"https://spreadsheets.google.com/feeds/spreadsheets/1HDooFzJM65Qj-3YnvMyDXhj-uZXsjc_99JCxo72zMMs",		
 	};
 	
+	static String getColor(int rank, int totalCount){
+		if((double)rank / totalCount * 100.0 < 10.0 )
+			return "#FF0000";
+		else if((double)rank / totalCount * 100.0 < 30.0 )
+			return "#AEB404";
+		else if((double)rank / totalCount * 100.0 < 50.0 )
+			return "#0033CC";
+		else if((double)rank / totalCount * 100.0 < 70.0 )
+			return "#31B404";
+		return "#BEBEBE";
+	}
 	static String getContent(List<Record> rankList){
 		String answer = "";
 		answer += "<table style=\"width:100%; border-spacing: 8px;\">";
@@ -63,7 +74,7 @@ public class ApplicationMain {
 		for(int i=0; i<rankList.size(); i++){
 			answer += "<tr>";
 			answer += "<td style=\"text-align:center\";>"; answer += String.valueOf(i+1); answer +="</td>";
-			answer += "<td>"; answer += rankList.get(i).name; answer +="</td>";
+			answer += "<td style=\"font-weight:bold; color:"; answer +=getColor(i+1,rankList.size()); answer+="\";>"; answer += rankList.get(i).name; answer +="</td>";
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).college; answer +="</td>";
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).year; answer +="</td>";
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).participationMode; answer +="</td>";
