@@ -15,16 +15,11 @@ public class ApplicationMain {
 	public static final String GOOGLE_BLOG_ID = "6075750740688262534";
 	public static final String PARTICIPANTS_SPREADSHEET_URL = "https://spreadsheets.google.com/feeds/spreadsheets/1x_Z5tlu_FyqU-9oGY-gSaMkRRHCj4kw2zckyylVOKyM"; //Fill in google spreadsheet URI
 
-	public static final String RANKLIST_BLOGPOST_ID = "5905635037977048771";
-	public static final String RANKLIST_BLOG_TITLE = "Ranklist till day 1 test";
+	public static final String RANKLIST_BLOGPOST_ID = "4159695214997493848";
+	public static final String RANKLIST_BLOG_TITLE = "Ranklist till day 1";
 	public static final String[] submissionSpreadSheetURLs={
-		"https://spreadsheets.google.com/feeds/spreadsheets/1JaD6NyHC6VPQomivQ79mctqodcBITlMRcXnCSwqt6yM",
-		"https://spreadsheets.google.com/feeds/spreadsheets/1ISbq9IYLXOqpwil-6wv1e4XG2lwqzFmQdCuPzKJvP9M",
-		"https://spreadsheets.google.com/feeds/spreadsheets/13Clr_oJWPztIemEDhf7mvoQGxeMR4qW822ZzLzzmqfs",
-		"https://spreadsheets.google.com/feeds/spreadsheets/182NO6cCidQMoKMZjfh2oobysTTFjWJ99HxFPHHq3JQE",
-		"https://spreadsheets.google.com/feeds/spreadsheets/1St6em7cAb4Rx88CGdGIj-prQOKbZb_edXpTbJf4W6mY",
-		"https://spreadsheets.google.com/feeds/spreadsheets/1H2dCpB6cqNpHfoQ7H6VByr6YqFSWGOzbAqU366t6leM",
-		"https://spreadsheets.google.com/feeds/spreadsheets/1HDooFzJM65Qj-3YnvMyDXhj-uZXsjc_99JCxo72zMMs",		
+		"https://spreadsheets.google.com/feeds/spreadsheets/1g8bCXDUAu8IYZYweCYzxJkwfBgG7TNO4eJLrxPfHm2o",
+		"https://spreadsheets.google.com/feeds/spreadsheets/11jF3m9JEQ1airBUYC292MoUnBmQf-SaBdVHC5U4ysIk"
 	};
 	
 	static String getColor(int rank, int totalCount){
