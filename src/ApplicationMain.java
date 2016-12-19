@@ -13,13 +13,28 @@ public class ApplicationMain {
 	public static final String GOOGLE_ACCOUNT_USERNAME = "cegcodingcamp"; // Fill in google account username
 	public static final String GOOGLE_ACCOUNT_PASSWORD = "cegcampcoding"; // Fill in google account password
 	public static final String GOOGLE_BLOG_ID = "6075750740688262534";
-	public static final String PARTICIPANTS_SPREADSHEET_URL = "https://spreadsheets.google.com/feeds/spreadsheets/1x_Z5tlu_FyqU-9oGY-gSaMkRRHCj4kw2zckyylVOKyM"; //Fill in google spreadsheet URI
+	public static final String PARTICIPANTS_SPREADSHEET_URL = "https://spreadsheets.google.com/feeds/spreadsheets/1fHvCasXwAQrA394oEfPABhBpCFjYhoDN25oT-f92pPU"; //Fill in google spreadsheet URI
 
-	public static final String RANKLIST_BLOGPOST_ID = "4159695214997493848";
-	public static final String RANKLIST_BLOG_TITLE = "Ranklist till day 1";
+	public static final String RANKLIST_BLOGPOST_ID = "2646978480108549765";
+	public static final String RANKLIST_BLOG_TITLE = "Ranklist till day 4";
 	public static final String[] submissionSpreadSheetURLs={
-		"https://spreadsheets.google.com/feeds/spreadsheets/1g8bCXDUAu8IYZYweCYzxJkwfBgG7TNO4eJLrxPfHm2o",
-		"https://spreadsheets.google.com/feeds/spreadsheets/11jF3m9JEQ1airBUYC292MoUnBmQf-SaBdVHC5U4ysIk"
+		"https://spreadsheets.google.com/feeds/spreadsheets/1cUxHfu4SCz8rM6Hr4u_4uyRjDwqFfJkNBE0DL3wny4E",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1ge9IjGp4Vo89BHb6dwElTuGuJLDLOeHiyKCATjCmMlw",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1HPdVtonw38xhW_XnR1bgo8V5EL3WgkSnVxA5icnbsJY",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1luBjN0lGxC0mXg-e_D3E8hzrqoNDndzrnmO4zwhMjyA",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1ocFjx9ZXVwrI3eeIx5nmd58-QDyA8x-sCiF20gtOKh8",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1CVHp_owBlLBfAttWrxX22PxYezg6jStFthiNPrM0S6A",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1s4ayafOdTH9K6diprLMDeyr8fVy5mFYUnsa_3-yDgKo",
+	};
+	
+	public static final int[][] points = {
+		{3,2,2,3,2,1},
+		{2,1,3,1},
+		{3,3,2,2,1,1},
+		{3,3,3,2,1},
+		{2,2,2,2},
+		{2,3,1,3,2},
+		{3,3,1,1}
 	};
 	
 	static String getColor(int rank, int totalCount){
@@ -62,7 +77,7 @@ public class ApplicationMain {
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).college; answer +="</td>";
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).year; answer +="</td>";
 			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).participationMode; answer +="</td>";
-			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).overallPoints*3; answer +="</td>";
+			answer += "<td style=\"text-align:center\";>"; answer += rankList.get(i).overallPoints; answer +="</td>";
 			answer += "</tr>";
 		}
 		answer += "</tbody>";
@@ -81,10 +96,10 @@ public class ApplicationMain {
 			for(int j=0;j<submissions.size();j++){
 				if(dictionary.get(submissions.get(j).email) != null)
 				{
-					dictionary.put(submissions.get(j).email, dictionary.get(submissions.get(j).email)+submissions.get(j).getSolvedCount());
+					dictionary.put(submissions.get(j).email, dictionary.get(submissions.get(j).email)+submissions.get(j).getScore(points[i]));
 				}
 				else
-					dictionary.put(submissions.get(j).email, submissions.get(j).getSolvedCount());
+					dictionary.put(submissions.get(j).email, submissions.get(j).getScore(points[i]));
 			}
 		}
 		

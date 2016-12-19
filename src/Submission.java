@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class Submission implements Comparable<Submission>{
+public class Submission{
 	public String email;
 	public String problemsSolved;
 	
@@ -15,8 +15,10 @@ public class Submission implements Comparable<Submission>{
 		if(problemsSolved!=null && !problemsSolved.contains("None") && !problemsSolved.contains("none")){
 			problemsSolved = problemsSolved.replaceAll(" ", "");
 			String[] solvedIdStrings = problemsSolved.split(",");
-			for(int i=0;i<solvedIdStrings.length;i++)
+			for(int i=0;i<solvedIdStrings.length;i++){
 				solvedIds.add(Integer.parseInt(solvedIdStrings[i]));		
+//				score += Constants.problems[Integer.parseInt(solvedIdStrings[i])-1].score;
+			}
 		}	
 	}
 	
@@ -24,12 +26,12 @@ public class Submission implements Comparable<Submission>{
 		return solvedIds.contains(problemId);
 	}
 	
-	public int getSolvedCount(){
-		return solvedIds.size();
-	}
-
-	@Override
-	public int compareTo(Submission other) {
-		return other.solvedIds.size() - solvedIds.size();
+	public int getScore(int points[]){
+		int score = 0;
+		for(int i=0;i<points.length;i++)
+			if(solvedIds.contains(i+1))
+				score += points[i];
+		
+		return score;
 	}
 }
