@@ -15,8 +15,8 @@ public class ApplicationMain {
 	public static final String GOOGLE_BLOG_ID = "6075750740688262534";
 	public static final String PARTICIPANTS_SPREADSHEET_URL = "https://spreadsheets.google.com/feeds/spreadsheets/1fHvCasXwAQrA394oEfPABhBpCFjYhoDN25oT-f92pPU"; //Fill in google spreadsheet URI
 
-	public static final String RANKLIST_BLOGPOST_ID = "2646978480108549765";
-	public static final String RANKLIST_BLOG_TITLE = "Ranklist till day 4";
+	public static final String RANKLIST_BLOGPOST_ID = "1367817479425101911";
+	public static final String RANKLIST_BLOG_TITLE = "CEG Coding Camp 2017 overall rankings";
 	public static final String[] submissionSpreadSheetURLs={
 		"https://spreadsheets.google.com/feeds/spreadsheets/1cUxHfu4SCz8rM6Hr4u_4uyRjDwqFfJkNBE0DL3wny4E",
 		"https://spreadsheets.google.com/feeds/spreadsheets/1ge9IjGp4Vo89BHb6dwElTuGuJLDLOeHiyKCATjCmMlw",
@@ -25,6 +25,9 @@ public class ApplicationMain {
 		"https://spreadsheets.google.com/feeds/spreadsheets/1ocFjx9ZXVwrI3eeIx5nmd58-QDyA8x-sCiF20gtOKh8",
 		"https://spreadsheets.google.com/feeds/spreadsheets/1CVHp_owBlLBfAttWrxX22PxYezg6jStFthiNPrM0S6A",
 		"https://spreadsheets.google.com/feeds/spreadsheets/1s4ayafOdTH9K6diprLMDeyr8fVy5mFYUnsa_3-yDgKo",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1qsuHxxuvow79s33AkNG2ixMJuFoyBcKr3C7G2k2pOms",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1oh0GA61Ct4wOWobVMUBLKRAp-4YQnYnPQ4PkkUBA_qM",
+		"https://spreadsheets.google.com/feeds/spreadsheets/1ZTAt_Af1pKPzujLEFQH0hqMUlCAKZBA7epmd8kaunak"		
 	};
 	
 	public static final int[][] points = {
@@ -34,7 +37,10 @@ public class ApplicationMain {
 		{3,3,3,2,1},
 		{2,2,2,2},
 		{2,3,1,3,2},
-		{3,3,1,1}
+		{3,3,1,1},
+		{2,3},
+		{2,1,1,1,3},
+		{2,2,2,2,2,1,1}
 	};
 	
 	static String getColor(int rank, int totalCount){
